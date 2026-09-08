@@ -407,6 +407,138 @@ input {
   }
 }
 
+/* ---------- Task quadrants ---------- */
+
+.quadrant {
+  margin-top: 20px;
+}
+
+.quadrant:first-of-type {
+  margin-top: 16px;
+}
+
+.quadrant__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0 2px 10px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--border);
+}
+
+.quadrant--danger .quadrant__header {
+  border-color: var(--danger);
+}
+.quadrant--green .quadrant__header {
+  border-color: var(--green);
+}
+.quadrant--gold .quadrant__header {
+  border-color: var(--gold);
+}
+.quadrant--muted .quadrant__header {
+  border-color: var(--text-muted);
+}
+
+.quadrant__header--clickable {
+  cursor: pointer;
+}
+
+.quadrant__label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+}
+
+.quadrant--danger .quadrant__label {
+  color: var(--danger);
+}
+.quadrant--green .quadrant__label {
+  color: var(--green-strong);
+}
+.quadrant--gold .quadrant__label {
+  color: var(--gold);
+}
+.quadrant--muted .quadrant__label {
+  color: var(--text-secondary);
+}
+
+.quadrant__count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-elevated-2);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.quadrant__chevron {
+  margin-left: auto;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.quadrant__chevron--open {
+  transform: rotate(180deg);
+}
+
+.quadrant__empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 0 0 4px 10px;
+}
+
+.quadrant__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+}
+
+.task-row__title {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.task-row__title--done {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.toggle-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.form__hint {
+  margin: 8px 2px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.link-btn--danger {
+  color: var(--danger);
+}
+
 /* ---------- Manage rows (settings) ---------- */
 
 .manage-row {
