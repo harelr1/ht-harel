@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks'
 import { navigate } from '../hooks/useHashRoute'
 import { currentStreak, isDoneOn } from '../lib/streak'
 import { toISODate } from '../lib/date'
@@ -5,19 +6,26 @@ import { toISODate } from '../lib/date'
 export default function HabitRow({ habit, onToggle, date = toISODate() }) {
   const done = isDoneOn(habit, date)
   const streak = currentStreak(habit)
+  const [justCompleted, setJustCompleted] = useState(false)
+
+  function handleToggle(e) {
+    e.stopPropagation()
+    if (!done) {
+      setJustCompleted(true)
+      setTimeout(() => setJustCompleted(false), 450)
+    }
+    onToggle(habit.id, date)
+  }
 
   return (
     <div class="habit-row">
       <button
-        class={`habit-row__check${done ? ' habit-row__check--done' : ''}`}
-        onClick={(e) => {
-          e.stopPropagation()
-          onToggle(habit.id, date)
-        }}
+        class={`habit-row__check${done ? ' habit-row__check--done' : ''}${justCompleted ? ' habit-row__check--pop' : ''}`}
+        onClick={handleToggle}
         aria-label={done ? `Mark ${habit.name} not done` : `Mark ${habit.name} done`}
       >
         {done && (
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+          <svg class="habit-row__check-icon" viewBox="0 0 24 24" width="16" height="16" fill="none">
             <path d="M5 13l4 4L19 7" stroke="#04140b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         )}
@@ -28,7 +36,7 @@ export default function HabitRow({ habit, onToggle, date = toISODate() }) {
         <span class={`habit-row__name${done ? ' habit-row__name--done' : ''}`}>{habit.name}</span>
       </button>
 
-      <div class="habit-row__streak" title="Current streak">
+      <div class={`habit-row__streak${justCompleted ? ' habit-row__streak--pulse' : ''}`} title="Current streak">
         <FlameIcon lit={streak > 0} />
         <span>{streak}</span>
       </div>
