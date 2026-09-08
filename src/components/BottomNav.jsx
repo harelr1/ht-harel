@@ -3,6 +3,7 @@ import { navigate } from '../hooks/useHashRoute'
 const TABS = [
   { path: '/', label: 'Home', icon: HomeIcon },
   { path: '/tasks', label: 'Tasks', icon: TasksIcon },
+  { path: '/workout', label: 'Workout', icon: WorkoutIcon },
   { path: '/stats', label: 'Stats', icon: StatsIcon },
   { path: '/settings', label: 'Settings', icon: SettingsIcon },
 ]
@@ -52,6 +53,19 @@ function TasksIcon({ active }) {
         stroke-width="1.6"
       />
       <path d="M9 12h6M9 16h4" stroke={active ? 'var(--green)' : 'currentColor'} stroke-width="1.6" stroke-linecap="round" />
+    </svg>
+  )
+}
+
+function WorkoutIcon({ active }) {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+      <path
+        d="M6.5 9v6M4 10.5v3M17.5 9v6M20 10.5v3M6.5 12h11"
+        stroke={active ? 'var(--green)' : 'currentColor'}
+        stroke-width="1.8"
+        stroke-linecap="round"
+      />
     </svg>
   )
 }

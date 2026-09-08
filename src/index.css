@@ -539,6 +539,172 @@ input {
   color: var(--danger);
 }
 
+/* ---------- Workout ---------- */
+
+.workout-start-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.workout-start-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.workout-start-card__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.workout-start-card__sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.session-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.session-row__date {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.session-row__meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.inline-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.inline-add .form__input {
+  flex: 1;
+}
+
+.checkbox-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.exercise-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.exercise-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.exercise-card__name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.set-row {
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.set-row:first-of-type {
+  border-top: none;
+}
+
+.set-row__main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.set-row__index {
+  width: 16px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.set-row__input {
+  width: 52px;
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+  text-align: center;
+}
+
+.set-row__input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.set-row__unit {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.set-row__x {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.set-row__prev {
+  display: block;
+  margin: 4px 0 0 22px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chip--add-set {
+  margin-top: 10px;
+}
+
+.add-exercise {
+  margin-top: 16px;
+}
+
+.add-exercise__picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* ---------- Manage rows (settings) ---------- */
 
 .manage-row {
